@@ -22,7 +22,6 @@ export default function App() {
     const contactsParsed = JSON.parse(contact);
     if (contactsParsed) {
       setContacts(contactsParsed);
-      // this.setState({ contacts: contactsParsed });
     }
   }, []);
 
@@ -46,14 +45,10 @@ export default function App() {
       return alert(`${newContact.name} is already in contacts.`);
     }
     setContacts([newContact, ...contacts]);
-    // this.setState(({ contacts }) => ({
-    //   contacts: [newContact, ...contacts],
-    // }));
   };
 
   const filterInput = (e) => {
     setFilter(e.currentTarget.value);
-    // this.setState({ filter: e.currentTarget.value });
   };
 
   const filterContacts = contacts.filter((contact) =>
@@ -64,9 +59,6 @@ export default function App() {
     setContacts((prevState) =>
       prevState.filter((contact) => contact.id !== conId)
     );
-    // this.setState((prevState) => ({
-    //   contacts: prevState.contacts.filter((contact) => contact.id !== conId),
-    // }));
   };
 
   return (
